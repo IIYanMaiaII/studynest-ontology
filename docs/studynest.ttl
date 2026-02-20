@@ -16,12 +16,6 @@
                                        "Studynest Ontology"@en ;
                               dcterms:created "2026-02-18"^^xsd:date ;
                               dcterms:license <https://creativecommons.org/licenses/by/4.0/legalcode> ;
-                              dcterms:language "pt" , "en" ;
-                              dcterms:publisher "Universidade Federal do Espírito Santo"@en ;
-                              dcterms:subject "educação"@en , "aprendizado colaborativo"@en , 
-                                              "ontologia"@en , "estudantes"@en , "grupos de estudo"@en ;
-                              owl:versionIRI <http://purl.org/studynest/1.0.0#> ;
-                              owl:versionInfo "1.0.0" ;
                               vann:preferredNamespacePrefix "studynest" ;
                               vann:preferredNamespaceUri "http://purl.org/studynest#" ;
                               rdfs:comment """Ontologia para o sistema Studynest, uma plataforma mobile de colaboração acadêmica.
@@ -72,7 +66,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#area
 :area rdf:type owl:ObjectProperty ;
-      rdfs:isDefinedBy <http://purl.org/studynest#> ;
       rdfs:domain :Disciplina ;
       rdfs:range :AreaType ;
       rdfs:comment "Área acadêmica da disciplina."@en ;
@@ -83,7 +76,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/studynest#associadoADisciplina
 :associadoADisciplina rdf:type owl:ObjectProperty ;
                       owl:inverseOf :possuiGrupo ;
-                      rdfs:isDefinedBy <http://purl.org/studynest#> ;
                       rdfs:domain :GrupoEstudo ;
                       rdfs:range :Disciplina ;
                       rdfs:comment "Grupo de estudo está associado a uma disciplina."@en ;
@@ -94,7 +86,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/studynest#contemMaterial
 :contemMaterial rdf:type owl:ObjectProperty ;
                 owl:inverseOf :pertenceADisciplina ;
-                rdfs:isDefinedBy <http://purl.org/studynest#> ;
                 rdfs:domain :Disciplina ;
                 rdfs:range :MaterialEstudo ;
                 rdfs:comment "Disciplina contém materiais de estudo."@en ;
@@ -105,7 +96,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/studynest#envia
 :envia rdf:type owl:ObjectProperty ;
        owl:inverseOf :enviadaPor ;
-       rdfs:isDefinedBy <http://purl.org/studynest#> ;
        rdfs:domain :Usuario ;
        rdfs:range :Mensagem ;
        rdfs:comment "Usuário envia uma mensagem."@en ;
@@ -115,7 +105,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#enviadaPor
 :enviadaPor rdf:type owl:ObjectProperty ;
-            rdfs:isDefinedBy <http://purl.org/studynest#> ;
             rdfs:domain :Mensagem ;
             rdfs:range :Usuario ;
             rdfs:comment "Mensagem foi enviada por um usuário."@en ;
@@ -125,7 +114,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#genero
 :genero rdf:type owl:ObjectProperty ;
-        rdfs:isDefinedBy <http://purl.org/studynest#> ;
         rdfs:domain :Usuario ;
         rdfs:range :Genero ;
         rdfs:comment "Gênero do usuário."@en ;
@@ -133,19 +121,8 @@ xsd:date rdf:type rdfs:Datatype .
                    "gênero"@pt .
 
 
-###  http://purl.org/studynest#inscritoEm
-:inscritoEm rdf:type owl:ObjectProperty ;
-            rdfs:isDefinedBy <http://purl.org/studynest#> ;
-            rdfs:domain :Usuario ;
-            rdfs:range :Disciplina ;
-            rdfs:comment "Usuário está inscrito em uma disciplina."@en ;
-            rdfs:label "enrolled in"@en ,
-                       "inscrito em"@pt .
-
-
 ###  http://purl.org/studynest#membroDe
 :membroDe rdf:type owl:ObjectProperty ;
-          rdfs:isDefinedBy <http://purl.org/studynest#> ;
           rdfs:domain :Usuario ;
           rdfs:range :GrupoEstudo ;
           rdfs:comment "Usuário é membro de um grupo de estudo."@en ;
@@ -155,7 +132,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#participacaoDisciplina
 :participacaoDisciplina rdf:type owl:ObjectProperty ;
-                        rdfs:isDefinedBy <http://purl.org/studynest#> ;
                         rdfs:domain :Usuario ;
                         rdfs:range :ParticipacaoDisciplina ;
                         rdfs:comment "Relação entre usuário e disciplina com papel específico."@en ;
@@ -165,7 +141,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#participacaoGrupo
 :participacaoGrupo rdf:type owl:ObjectProperty ;
-                   rdfs:isDefinedBy <http://purl.org/studynest#> ;
                    rdfs:domain :Usuario ;
                    rdfs:range :ParticipacaoGrupo ;
                    rdfs:comment "Relação entre usuário e grupo com papel específico."@en ;
@@ -175,7 +150,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#pertenceADisciplina
 :pertenceADisciplina rdf:type owl:ObjectProperty ;
-                     rdfs:isDefinedBy <http://purl.org/studynest#> ;
                      rdfs:domain :MaterialEstudo ;
                      rdfs:range :Disciplina ;
                      rdfs:comment "Material pertence a uma disciplina."@en ;
@@ -186,7 +160,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/studynest#pertenceAGrupo
 :pertenceAGrupo rdf:type owl:ObjectProperty ;
                 owl:inverseOf :possuiMensagem ;
-                rdfs:isDefinedBy <http://purl.org/studynest#> ;
                 rdfs:domain :Mensagem ;
                 rdfs:range :GrupoEstudo ;
                 rdfs:comment "Mensagem pertence a um grupo de estudo."@en ;
@@ -196,7 +169,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#possuiGrupo
 :possuiGrupo rdf:type owl:ObjectProperty ;
-             rdfs:isDefinedBy <http://purl.org/studynest#> ;
              rdfs:domain :Disciplina ;
              rdfs:range :GrupoEstudo ;
              rdfs:comment "Disciplina possui grupos de estudo."@en ;
@@ -206,7 +178,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#possuiMensagem
 :possuiMensagem rdf:type owl:ObjectProperty ;
-                rdfs:isDefinedBy <http://purl.org/studynest#> ;
                 rdfs:domain :GrupoEstudo ;
                 rdfs:range :Mensagem ;
                 rdfs:comment "Grupo de estudo possui mensagens no chat."@en ;
@@ -217,7 +188,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/studynest#possuiUsuario
 :possuiUsuario rdf:type owl:ObjectProperty ;
                owl:inverseOf :vinculadoA ;
-               rdfs:isDefinedBy <http://purl.org/studynest#> ;
                rdfs:domain :Instituicao ;
                rdfs:range :Usuario ;
                rdfs:comment "Instituição possui usuários vinculados."@en ;
@@ -228,7 +198,6 @@ xsd:date rdf:type rdfs:Datatype .
 ###  http://purl.org/studynest#publica
 :publica rdf:type owl:ObjectProperty ;
          owl:inverseOf :publicadoPor ;
-         rdfs:isDefinedBy <http://purl.org/studynest#> ;
          rdfs:domain :Usuario ;
          rdfs:range :MaterialEstudo ;
          rdfs:comment "Usuário publica um material de estudo."@en ;
@@ -238,7 +207,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#publicadoPor
 :publicadoPor rdf:type owl:ObjectProperty ;
-              rdfs:isDefinedBy <http://purl.org/studynest#> ;
               rdfs:domain :MaterialEstudo ;
               rdfs:range :Usuario ;
               rdfs:comment "Material foi publicado por um usuário."@en ;
@@ -248,7 +216,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#status
 :status rdf:type owl:ObjectProperty ;
-        rdfs:isDefinedBy <http://purl.org/studynest#> ;
         rdfs:domain :Mensagem ;
         rdfs:range :StatusMensagem ;
         rdfs:comment "Status da mensagem."@en ;
@@ -258,7 +225,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#temDisciplina
 :temDisciplina rdf:type owl:ObjectProperty ;
-               rdfs:isDefinedBy <http://purl.org/studynest#> ;
                rdfs:domain :ParticipacaoDisciplina ;
                rdfs:range :Disciplina ;
                rdfs:label "has course"@en ,
@@ -267,7 +233,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#temGrupo
 :temGrupo rdf:type owl:ObjectProperty ;
-          rdfs:isDefinedBy <http://purl.org/studynest#> ;
           rdfs:domain :ParticipacaoGrupo ;
           rdfs:range :GrupoEstudo ;
           rdfs:label "has group"@en ,
@@ -276,7 +241,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#temPapelDisciplina
 :temPapelDisciplina rdf:type owl:ObjectProperty ;
-                    rdfs:isDefinedBy <http://purl.org/studynest#> ;
                     rdfs:domain :ParticipacaoDisciplina ;
                     rdfs:range :PapelDisciplina ;
                     rdfs:label "has course role"@en ,
@@ -285,7 +249,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#temPapelGrupo
 :temPapelGrupo rdf:type owl:ObjectProperty ;
-               rdfs:isDefinedBy <http://purl.org/studynest#> ;
                rdfs:domain :ParticipacaoGrupo ;
                rdfs:range :PapelGrupo ;
                rdfs:label "has group role"@en ,
@@ -294,7 +257,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#temUsuarioDisciplina
 :temUsuarioDisciplina rdf:type owl:ObjectProperty ;
-                      rdfs:isDefinedBy <http://purl.org/studynest#> ;
                       rdfs:domain :ParticipacaoDisciplina ;
                       rdfs:range :Usuario ;
                       rdfs:label "has user"@en ,
@@ -303,7 +265,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#temUsuarioGrupo
 :temUsuarioGrupo rdf:type owl:ObjectProperty ;
-                 rdfs:isDefinedBy <http://purl.org/studynest#> ;
                  rdfs:domain :ParticipacaoGrupo ;
                  rdfs:range :Usuario ;
                  rdfs:label "has user"@en ,
@@ -312,7 +273,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#tipo
 :tipo rdf:type owl:ObjectProperty ;
-      rdfs:isDefinedBy <http://purl.org/studynest#> ;
       rdfs:domain :MaterialEstudo ;
       rdfs:range :TipoMaterial ;
       rdfs:comment "Tipo do material de estudo."@en ;
@@ -322,7 +282,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#vinculadoA
 :vinculadoA rdf:type owl:ObjectProperty ;
-            rdfs:isDefinedBy <http://purl.org/studynest#> ;
             rdfs:domain :Usuario ;
             rdfs:range :Instituicao ;
             rdfs:comment "Usuário está vinculado a uma instituição de ensino."@en ;
@@ -336,7 +295,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#conteudo
 :conteudo rdf:type owl:DatatypeProperty ;
-          rdfs:isDefinedBy <http://purl.org/studynest#> ;
           rdfs:domain :Mensagem ;
           rdfs:range xsd:string ;
           rdfs:comment "Conteúdo textual da mensagem."@en ;
@@ -346,7 +304,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#dataEnvio
 :dataEnvio rdf:type owl:DatatypeProperty ;
-           rdfs:isDefinedBy <http://purl.org/studynest#> ;
            rdfs:domain :Mensagem ;
            rdfs:range xsd:dateTime ;
            rdfs:comment "Data em que a mensagem foi enviada."@en ;
@@ -356,7 +313,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#dataPublicacao
 :dataPublicacao rdf:type owl:DatatypeProperty ;
-                rdfs:isDefinedBy <http://purl.org/studynest#> ;
                 rdfs:domain :MaterialEstudo ;
                 rdfs:range xsd:dateTime ;
                 rdfs:comment "Data em que o material foi publicado."@en ;
@@ -366,7 +322,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#descricao
 :descricao rdf:type owl:DatatypeProperty ;
-           rdfs:isDefinedBy <http://purl.org/studynest#> ;
            rdfs:range xsd:string ;
            rdfs:comment "Descrição do grupo de estudo."@en ;
            rdfs:label "description"@en ,
@@ -375,7 +330,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#email
 :email rdf:type owl:DatatypeProperty ;
-       rdfs:isDefinedBy <http://purl.org/studynest#> ;
        rdfs:domain :Usuario ;
        rdfs:range xsd:string ;
        rdfs:comment "Email do usuário."@en ;
@@ -384,7 +338,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#nome
 :nome rdf:type owl:DatatypeProperty ;
-      rdfs:isDefinedBy <http://purl.org/studynest#> ;
       rdfs:range xsd:string ;
       rdfs:comment "Nome do usuário, instituição, disciplina, grupo ou material."@en ;
       rdfs:label "name"@en ,
@@ -393,7 +346,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#senhaHash
 :senhaHash rdf:type owl:DatatypeProperty ;
-           rdfs:isDefinedBy <http://purl.org/studynest#> ;
            rdfs:domain :Usuario ;
            rdfs:range xsd:string ;
            rdfs:comment "Hash da senha do usuário."@en ;
@@ -403,7 +355,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#tamanho
 :tamanho rdf:type owl:DatatypeProperty ;
-         rdfs:isDefinedBy <http://purl.org/studynest#> ;
          rdfs:domain :MaterialEstudo ;
          rdfs:range xsd:long ;
          rdfs:comment "Tamanho do arquivo em bytes."@en ;
@@ -413,7 +364,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#telefone
 :telefone rdf:type owl:DatatypeProperty ;
-          rdfs:isDefinedBy <http://purl.org/studynest#> ;
           rdfs:domain :Usuario ;
           rdfs:range xsd:string ;
           rdfs:comment "Telefone do usuário."@en ;
@@ -427,7 +377,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#AreaType
 :AreaType rdf:type owl:Class ;
-          rdfs:isDefinedBy <http://purl.org/studynest#> ;
           rdfs:comment "Enumeração de áreas acadêmicas para disciplinas."@en ;
           rdfs:label "Area Type"@en ,
                      "Área"@pt .
@@ -435,7 +384,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#Disciplina
 :Disciplina rdf:type owl:Class ;
-            rdfs:isDefinedBy <http://purl.org/studynest#> ;
             rdfs:subClassOf [ rdf:type owl:Restriction ;
                               owl:onProperty :contemMaterial ;
                               owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -451,7 +399,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#Genero
 :Genero rdf:type owl:Class ;
-        rdfs:isDefinedBy <http://purl.org/studynest#> ;
         rdfs:comment "Enumeração de gêneros possíveis para um usuário."@en ;
         rdfs:label "Gender"@en ,
                    "Gênero"@pt .
@@ -459,7 +406,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#GrupoEstudo
 :GrupoEstudo rdf:type owl:Class ;
-             rdfs:isDefinedBy <http://purl.org/studynest#> ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty :possuiMensagem ;
                                owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -475,7 +421,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#Instituicao
 :Instituicao rdf:type owl:Class ;
-             rdfs:isDefinedBy <http://purl.org/studynest#> ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty :possuiUsuario ;
                                owl:minCardinality "0"^^xsd:nonNegativeInteger
@@ -487,7 +432,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#MaterialEstudo
 :MaterialEstudo rdf:type owl:Class ;
-                rdfs:isDefinedBy <http://purl.org/studynest#> ;
                 rdfs:subClassOf [ rdf:type owl:Restriction ;
                                   owl:onProperty :pertenceADisciplina ;
                                   owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -503,7 +447,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#Mensagem
 :Mensagem rdf:type owl:Class ;
-          rdfs:isDefinedBy <http://purl.org/studynest#> ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty :enviadaPor ;
                             owl:cardinality "1"^^xsd:nonNegativeInteger
@@ -519,7 +462,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#PapelDisciplina
 :PapelDisciplina rdf:type owl:Class ;
-                 rdfs:isDefinedBy <http://purl.org/studynest#> ;
                  rdfs:comment "Papel que um usuário pode desempenhar em uma disciplina."@en ;
                  rdfs:label "Course Role"@en ,
                             "Papel na Disciplina"@pt .
@@ -527,7 +469,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#PapelGrupo
 :PapelGrupo rdf:type owl:Class ;
-            rdfs:isDefinedBy <http://purl.org/studynest#> ;
             rdfs:comment "Papel que um usuário pode desempenhar em um grupo de estudo."@en ;
             rdfs:label "Group Role"@en ,
                        "Papel no Grupo"@pt .
@@ -535,7 +476,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#ParticipacaoDisciplina
 :ParticipacaoDisciplina rdf:type owl:Class ;
-                        rdfs:isDefinedBy <http://purl.org/studynest#> ;
                         rdfs:comment "Representa a relação entre usuário e disciplina, incluindo o papel desempenhado."@en ;
                         rdfs:label "Course Participation"@en ,
                                    "Participação em Disciplina"@pt .
@@ -543,7 +483,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#ParticipacaoGrupo
 :ParticipacaoGrupo rdf:type owl:Class ;
-                   rdfs:isDefinedBy <http://purl.org/studynest#> ;
                    rdfs:comment "Representa a relação entre usuário e grupo de estudo, incluindo o papel desempenhado."@en ;
                    rdfs:label "Group Participation"@en ,
                               "Participação em Grupo"@pt .
@@ -551,7 +490,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#StatusMensagem
 :StatusMensagem rdf:type owl:Class ;
-                rdfs:isDefinedBy <http://purl.org/studynest#> ;
                 rdfs:comment "Enumeração de status possíveis para uma mensagem."@en ;
                 rdfs:label "Message Status"@en ,
                            "Status da Mensagem"@pt .
@@ -559,7 +497,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#TipoMaterial
 :TipoMaterial rdf:type owl:Class ;
-              rdfs:isDefinedBy <http://purl.org/studynest#> ;
               rdfs:comment "Enumeração de tipos de material de estudo."@en ;
               rdfs:label "Material Type"@en ,
                          "Tipo de Material"@pt .
@@ -567,7 +504,6 @@ xsd:date rdf:type rdfs:Datatype .
 
 ###  http://purl.org/studynest#Usuario
 :Usuario rdf:type owl:Class ;
-         rdfs:isDefinedBy <http://purl.org/studynest#> ;
          rdfs:subClassOf [ rdf:type owl:Restriction ;
                            owl:onProperty :vinculadoA ;
                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
